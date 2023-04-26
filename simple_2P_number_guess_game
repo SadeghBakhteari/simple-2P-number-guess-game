@@ -1,0 +1,22 @@
+secret_number = int(input ('player 1: please set the secret number in 1 digit: '))
+while int(secret_number) > 10:
+    print ('please use a 1 digit number')
+    secret_number = int(input('player 1: please try again: '))
+else:
+    print('thanks')
+guess_limit = int(input('player 1 set guess limits: '))
+guess_count = 0
+while guess_count < guess_limit:
+    guess = int(input('player 2 has to Guess: '))
+    while guess > 10:
+        print('only 1 digit numbers are allowed!')
+        guess = int(input("player 2: that did't count. please guess again: "))
+    else:
+        print(f'you made a wrong guess. {guess} is not the correct [secret number].')
+    guess_count += 1
+    if guess == secret_number:
+        print ('player 2 wins!')
+        break
+else:
+    print (' player 1 wins!')
+    
